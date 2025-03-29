@@ -18,7 +18,26 @@ ENV SDKMAN_DIR="/root/.sdkman"
 ENV PATH="${SDKMAN_DIR}/bin:${PATH}"
 
 # Install Kotlin and Gradle
-RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh && sdk install kotlin"
+RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh && sdk install kotlin && sdk install gradle"
+
 RUN python3.10 --version
 RUN java -version
-RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh && kotlin -version"
+RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh && kotlin -version && gradle -v"
+
+
+# Ensure Gradle is in the PATH
+ENV PATH="${SDKMAN_DIR}/candidates/gradle/current/bin:${PATH}"
+ENV GRADLE_HOME="${SDKMAN_DIR}/candidates/gradle/current"
+
+# Set working directory
+WORKDIR /app
+
+# Initialize a Gradle Java application
+RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh"
+
+# Configure Gradle build script
+RUN echo 'plugins { id "application" }' > /app/build.gradle && \
+    echo 'repositories { mavenCentral() }' >> /app/build.gradle && \
+    echo 'dependencies { implementation "org.xerial:sqlite-jdbc:3.45.2.0" }' >> /app/build.gradle
+
+RUN cat /app/build.gradle
