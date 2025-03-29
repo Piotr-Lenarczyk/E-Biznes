@@ -13,7 +13,7 @@
 :white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [docker](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/docker)
 
 **Zadanie 2** Scala
 
@@ -28,7 +28,7 @@ Kod: (folder lub branch)
 :white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [scala](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/scala)
 
 **Zadanie 3** Kotlin
 
@@ -43,7 +43,7 @@ Kod: (folder lub branch)
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [kotlin](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/kotlin)
 
 **Zadanie 4** Go
 
@@ -58,7 +58,7 @@ Kod: (folder lub branch)
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [go](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/go)
 
 **Zadanie 5** Frontend
 
@@ -73,7 +73,7 @@ Kod: (folder lub branch)
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [frontend](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/frontend)
 
 
 **Zadanie 6** Testy
@@ -89,7 +89,7 @@ Kod: (folder lub branch)
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [tests](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/tests)
 
 
 **Zadanie 7** Sonar
@@ -105,7 +105,7 @@ Kod: (folder lub branch)
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
 
-Kod: (folder lub branch)
+Kod: [sonar](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/sonar)
 
 
 **Zadanie 8** Tytuł
