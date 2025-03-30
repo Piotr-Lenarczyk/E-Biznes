@@ -1,0 +1,22 @@
+# Use the existing Play Framework app image as a base
+FROM scala-app
+
+# Install ngrok
+RUN apt-get update && apt-get install -y curl unzip procps jq \
+    && curl -s https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip -o ngrok.zip \
+    && unzip ngrok.zip && mv ngrok /usr/local/bin/ && rm ngrok.zip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+
+# Copy the ngrok start script
+COPY start-ngrok.sh /start-ngrok.sh
+RUN chmod +x /start-ngrok.sh
+
+# Expose Play Framework's default port
+EXPOSE 9000
+
+# Set environment variable for ngrok auth token
+ENV NGROK_AUTH_TOKEN=""
+
+# Start Play and ngrok
+ENTRYPOINT ["/start-ngrok.sh"]
