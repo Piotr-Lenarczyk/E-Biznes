@@ -17,3 +17,16 @@ POST	/products		    controllers.ProductController.create
 PUT	/products/:id		    controllers.ProductController.update(id: Int)
 DELETE	/products/:id		    controllers.ProductController.delete(id: Int)
 
+# Routes for categories
+GET     /categories                controllers.CategoryController.getAll
+GET     /categories/:id            controllers.CategoryController.getById(id: Int)
+POST    /categories                controllers.CategoryController.create
+PUT     /categories/:id            controllers.CategoryController.update(id: Int)
+DELETE  /categories/:id            controllers.CategoryController.delete(id: Int)
+
+# Routes for baskets
+GET     /baskets                   controllers.BasketController.getAll
+GET     /baskets/:id               controllers.BasketController.getById(id: Int)
+POST    /baskets                   controllers.BasketController.create
+PUT     /baskets/:id               controllers.BasketController.update(id: Int)
+DELETE  /baskets/:id               controllers.BasketController.delete(id: Int)
