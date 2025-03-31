@@ -17,15 +17,15 @@ Kod: [docker](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/docker)
 
 **Zadanie 2** Scala
 
-:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/aaca6a98a547515bb5114540f5eecd0a072033de)
 
-:white_check_mark: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/032db4ccd58656c85dd4a8e3f23a03aae232f1e5)
 
-:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/bad487579c7e73c1b09dc2556553232cb5349035)
 
-:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/14233bcffc89d1ff6b11180468a2cb3eb8176919)
 
-:white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/03526eda8011929135390d2180fdb32c3ca212b7)
 
 
 Kod: [scala](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/scala)
