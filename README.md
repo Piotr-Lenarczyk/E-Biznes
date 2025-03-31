@@ -1,161 +1,49 @@
-# E-Biznes
-
-**Zadanie 1** Docker
-
-:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-**Zadanie 2** Scala
-
-:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-**Zadanie 3** Kotlin
-
-:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-**Zadanie 4** Go
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-**Zadanie 5** Frontend
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-
-**Zadanie 6** Testy
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-
-**Zadanie 7** Sonar
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-
-**Zadanie 8** Tytuł
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-
-**Zadanie 9** Tytuł
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-
-**Zadanie 10** Tytuł
-
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
-
-
-Kod: (folder lub branch)
-
-
-Kod nalezy umieścić w w folderach lub na branchach, ale nalezy pod kazdym zadaniem wskazac link do brancha lub nazwę katalogu na repozytorium. 
-
-Do kazdego zadania nalezy przygotowac demo za pomocą https://obsproject.com/, a film (skompresowany) nalezy umiescic w katalogu demos.
+# Scala
+
+## Prerequisites
+This project can be run on OS which has the following installed:
+- <b>Git</b>
+- <b>Docker</b>
+- For usage #3 only: <b>Play Framework</b>
+
+## Installation
+Follow the [demo](https://github.com/Piotr-Lenarczyk/E-Biznes/blob/scala/demos/2025-03-31%2010-35-14.mp4) or do the following:
+1. Clone the branch
+```
+git clone -b scala --single-branch https://github.com/Piotr-Lenarczyk/E-Biznes.git
+```
+2. Make scripts executable
+```
+cd E-Biznes/
+chmod +x *.sh
+```
+3. Run the first Docker image (Usage #1)
+```
+docker build --no-cache -t scala-app .
+docker run --rm scala-app
+```
+This will:
+- Prepare the environment
+- Start the server
+- Run the API endpoints tests defined in [test_api.sh](https://github.com/Piotr-Lenarczyk/E-Biznes/blob/scala/test_api.sh)
+- Shut the server down
+4. Run the second Docker image (Usage #2)
+```
+docker build --no-cache -f Dockerfile.ngrok -t play-scala-ngrok .
+docker run --rm -e NGROK_AUTH_TOKEN=$NGROK_AUTH_TOKEN play-scala-ngrok
+```
+Replace `$NGROK_AUTH_TOKEN` with your own authorization token<br>
+You might need to run the second command twice<br>
+Make sure to first <i>run point 3</i> since this Docker image depends on it<br>
+This will:
+- Prepare the environment
+- Start the server
+- Expose server's port
+- Setup an ngrok tunnel<br>
+
+The server will now be available from public URL shown in the console<br>
+This container does not have graceful shutdown mechanisms and when forced to stop, will not release the tunnel. It needs to be done manually
+5. Alternatively, server can be run locally according to needs (Usage #3)
+```
+sbt run
+```
