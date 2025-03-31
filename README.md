@@ -42,7 +42,7 @@ This will:
 - Setup an ngrok tunnel<br>
 
 The server will now be available from public URL shown in the console<br>
-This container does not have graceful shutdown mechanisms and when forced to stop, will not release the tunnel. It needs to be done manually
+This container does not have graceful shutdown mechanisms and when forced to stop, will not release the tunnel. It needs to be done manually<br>
 5. Alternatively, server can be run locally according to needs (Usage #3)
 ```
 sbt run
