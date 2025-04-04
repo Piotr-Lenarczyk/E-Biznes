@@ -1,79 +1,84 @@
 package controllers
 
 import (
-	"fmt"
-	"net/http"
-	"github.com/labstack/echo/v4"
+    "github.com/labstack/echo/v4"
+    "gorm.io/gorm"
+    "net/http"
 )
 
 type Product struct {
-	ID    uint   `json:"id"`
-	Name  string `json:"name"`
-	Price int    `json:"price"`
+    ID    uint   `json:"id"`
+    Name  string `json:"name"`
+    Price int    `json:"price"`
 }
 
-var products []Product
-var nextID uint = 1
+var db *gorm.DB
+
+func SetDB(database *gorm.DB) {
+    db = database
+}
 
 func RegisterProductRoutes(e *echo.Echo) {
-	e.GET("/products", GetProducts)
-	e.POST("/products", CreateProduct)
-	e.GET("/products/:id", GetProductByID)
-	e.PUT("/products/:id", UpdateProduct)
-	e.DELETE("/products/:id", DeleteProduct)
+    e.GET("/products", GetProducts)
+    e.POST("/products", CreateProduct)
+    e.GET("/products/:id", GetProductByID)
+    e.PUT("/products/:id", UpdateProduct)
+    e.DELETE("/products/:id", DeleteProduct)
 }
 
+// Get all products
 func GetProducts(c echo.Context) error {
-	return c.JSON(http.StatusOK, products)
+    var products []Product
+    if err := db.Find(&products).Error; err != nil {
+        return c.JSON(http.StatusInternalServerError, err.Error())
+    }
+    return c.JSON(http.StatusOK, products)
 }
 
+// Create a new product
 func CreateProduct(c echo.Context) error {
-	var p Product
-	if err := c.Bind(&p); err != nil {
-		return err
-	}
-	p.ID = nextID
-	nextID++
-	products = append(products, p)
-	return c.JSON(http.StatusCreated, p)
+    var p Product
+    if err := c.Bind(&p); err != nil {
+        return err
+    }
+    if err := db.Create(&p).Error; err != nil {
+        return c.JSON(http.StatusInternalServerError, err.Error())
+    }
+    return c.JSON(http.StatusCreated, p)
 }
 
+// Get product by ID
 func GetProductByID(c echo.Context) error {
-    // Convert the URL parameter ID to uint
+    var p Product
     id := c.Param("id")
-
-    // Iterate through products and compare the ID
-    for _, p := range products {
-        if fmt.Sprintf("%d", p.ID) == id { // Convert product ID to string and compare
-            return c.JSON(http.StatusOK, p)
-        }
+    if err := db.First(&p, id).Error; err != nil {
+        return c.JSON(http.StatusNotFound, echo.Map{"message": "Product not found"})
     }
-    return c.JSON(http.StatusNotFound, echo.Map{"message": "Product not found"})
+    return c.JSON(http.StatusOK, p)
 }
 
-
+// Update product by ID
 func UpdateProduct(c echo.Context) error {
-    id := c.Param("id") // Get the ID from the URL parameter
-    for i, p := range products {
-        if fmt.Sprintf("%d", p.ID) == id { // Convert product ID to string and compare
-            if err := c.Bind(&products[i]); err != nil {
-                return err
-            }
-            return c.JSON(http.StatusOK, products[i])
-        }
+    var p Product
+    id := c.Param("id")
+    if err := db.First(&p, id).Error; err != nil {
+        return c.JSON(http.StatusNotFound, echo.Map{"message": "Product not found"})
     }
-    return c.JSON(http.StatusNotFound, echo.Map{"message": "Product not found"})
+    if err := c.Bind(&p); err != nil {
+        return err
+    }
+    if err := db.Save(&p).Error; err != nil {
+        return c.JSON(http.StatusInternalServerError, err.Error())
+    }
+    return c.JSON(http.StatusOK, p)
 }
 
-
+// Delete product by ID
 func DeleteProduct(c echo.Context) error {
-    id := c.Param("id") // Get the ID from the URL parameter
-    for i, p := range products {
-        if fmt.Sprintf("%d", p.ID) == id { // Convert product ID to string and compare
-            products = append(products[:i], products[i+1:]...)
-            return c.NoContent(http.StatusNoContent)
-        }
+    var p Product
+    id := c.Param("id")
+    if err := db.Delete(&p, id).Error; err != nil {
+        return c.JSON(http.StatusNotFound, echo.Map{"message": "Product not found"})
     }
-    return c.JSON(http.StatusNotFound, echo.Map{"message": "Product not found"})
+    return c.NoContent(http.StatusNoContent)
 }
-

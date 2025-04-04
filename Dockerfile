@@ -1,6 +1,8 @@
-FROM golang:1.21-alpine
+FROM golang:1.23
 
-RUN apk add --no-cache curl
+RUN apt update
+
+RUN apt install -y curl
 
 WORKDIR /app
 
@@ -8,6 +10,8 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
+
+RUN chmod +x *.sh
 
 RUN go build -o main .
 
