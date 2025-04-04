@@ -19,7 +19,7 @@ func init() {
     }
 
     // Migrate the schema
-    db.AutoMigrate(&controllers.Product{})
+    db.AutoMigrate(&controllers.Product{}, &controllers.Cart{})
 
     // Set DB in the controller
     controllers.SetDB(db)
@@ -30,6 +30,7 @@ func main() {
 
     // Register the routes
     controllers.RegisterProductRoutes(e)
+    controllers.RegisterCartRoutes(e, db)
 
     e.Logger.Fatal(e.Start(":8080"))
 }
