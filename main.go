@@ -19,18 +19,23 @@ func init() {
     }
 
     // Migrate the schema
-    db.AutoMigrate(&controllers.Product{}, &controllers.Cart{})
+    db.AutoMigrate(&controllers.Product{}, &controllers.Cart{}, &controllers.Category{})
 
     // Set DB in the controller
-    controllers.SetDB(db)
+    SetDB(db)
+}
+
+func SetDB(database *gorm.DB) {
+    db = database
 }
 
 func main() {
     e := echo.New()
 
     // Register the routes
-    controllers.RegisterProductRoutes(e)
+    controllers.RegisterProductRoutes(e, db)
     controllers.RegisterCartRoutes(e, db)
+    controllers.RegisterCategoryRoutes(e, db)
 
     e.Logger.Fatal(e.Start(":8080"))
 }
