@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  # Backend Service
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    command: ["./main"]
+  
+  # Script Service
+  #script:
+    #build:
+    #  context: ./backend
+    #container_name: script
+    #networks:
+    #  - app-network
+    #depends_on:
+    #  - backend
+    #entrypoint: ["./test-api.sh"]
+    #restart: "no"  # Exits once the script finishes
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend/react-client
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - backend  # Ensure frontend starts after the script completes
+    command: ["npm", "start"]
+
+networks:
+  app-network:
+    driver: bridge

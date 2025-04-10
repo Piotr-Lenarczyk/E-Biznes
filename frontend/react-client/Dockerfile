@@ -1,0 +1,17 @@
+# Dockerfile for React frontend
+FROM node:16-alpine
+
+WORKDIR /app
+
+RUN apk update
+
+RUN apk add curl
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
