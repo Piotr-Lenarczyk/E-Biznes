@@ -1,48 +1,54 @@
+// src/pages/Cart.js
 import React, { useState, useEffect } from "react";
 import { fetchCart, updateCart } from "../api/cart";
 import { fetchProducts } from "../api/product";
 import { useParams } from "react-router-dom";
 
-export default function Cart() {
+const Cart = () => {
     const { id } = useParams();
     const [cart, setCart] = useState(null);
     const [products, setProducts] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
 
+    // Load the cart and products data when the component is mounted
     useEffect(() => {
         const loadData = async () => {
-            const cartData = await fetchCart(id);
-            setCart(cartData);
-            setSelectedProducts(cartData.products.map((p) => p.id));
+            try {
+                const cartData = await fetchCart(id);
+                setCart(cartData);
+                setSelectedProducts(cartData.products.map((p) => p.id));
 
-            const productsData = await fetchProducts();
-            setProducts(productsData);
+                const productsData = await fetchProducts();
+                setProducts(productsData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         };
 
         loadData();
     }, [id]);
 
+    // Handle checkbox change to add or remove products
     const handleCheckboxChange = (productId) => {
         setSelectedProducts((prevSelected) =>
             prevSelected.includes(productId)
-                ? prevSelected.filter((id) => id !== productId)
-                : [...prevSelected, productId]  // Just store product IDs, not objects
+                ? prevSelected.filter((id) => id !== productId) // Remove product if already selected
+                : [...prevSelected, productId] // Add product if not selected
         );
     };
 
+    // Handle updating the cart with selected products
     const handleUpdateCart = async () => {
-        console.log("Updated selectedProducts:", selectedProducts);
-
         try {
-            await updateCart(id, selectedProducts); // Pass product IDs directly
-            const updatedCart = await fetchCart(id);
-            setCart(updatedCart);
+            await updateCart(id, selectedProducts); // Update cart in backend
+            const updatedCart = await fetchCart(id); // Fetch updated cart data
+            setCart(updatedCart); // Update the state with new cart data
         } catch (error) {
-            console.error("Failed to update cart:", error);
+            console.error("Error updating cart:", error);
         }
     };
 
-    if (!cart) return <div>Loading...</div>;
+    if (!cart || !products) return <div>Loading...</div>;
 
     return (
         <div>
@@ -55,13 +61,13 @@ export default function Cart() {
                 ))}
             </ul>
 
-            <h3>All Products:</h3>
+            <h3>All Available Products:</h3>
             {products.map((product) => (
                 <div key={product.id}>
                     <input
                         type="checkbox"
-                        checked={selectedProducts.includes(product.id)}
-                        onChange={() => handleCheckboxChange(product.id)}
+                        checked={selectedProducts.includes(product.id)} // Check if product is selected
+                        onChange={() => handleCheckboxChange(product.id)} // Handle checkbox change
                     />
                     {product.name}
                 </div>
@@ -70,4 +76,6 @@ export default function Cart() {
             <button onClick={handleUpdateCart}>Update Cart</button>
         </div>
     );
-}
+};
+
+export default Cart;

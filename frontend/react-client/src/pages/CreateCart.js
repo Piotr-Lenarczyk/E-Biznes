@@ -29,10 +29,12 @@ const CreateCart = () => {
           prev.filter((product) => product.id !== productId)
       );
     }
+    console.log("Selected Products:", selectedProducts); // Debugging
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("Form submitted");
 
     try {
       const response = await fetch("http://localhost:8080/carts", {
