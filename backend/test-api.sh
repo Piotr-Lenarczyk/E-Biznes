@@ -87,3 +87,8 @@ curl -X PUT http://localhost:8080/carts/1 \
 
 echo "DELETE /carts/1"
 curl -X DELETE http://localhost:8080/carts/1
+
+echo "POST /carts"
+curl -X POST http://localhost:8080/carts \
+-H "Content-Type: application/json" \
+-d '{"products": [{"id": 2}]}'

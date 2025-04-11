@@ -1,25 +1,24 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Update import
-import Products from './Products';
-import Payments from './Payments';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Products from "./pages/Products";
+import Payments from "./pages/Payments";
+import Cart from "./pages/Cart";
+import Carts from "./pages/Carts";
+import CreateCart from './pages/CreateCart';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <h1>My React App</h1>
-        <nav>
-          <ul>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/payments">Payments</a></li>
-          </ul>
-        </nav>
-        <Routes> {/* Use Routes instead of Switch */}
-          <Route path="/products" element={<Products />} /> {/* Update route definition */}
-          <Route path="/payments" element={<Payments />} /> {/* Update route definition */}
-        </Routes>
-      </div>
+      <nav>
+        <Link to="/">Products</Link> | <Link to="/payments">Payments</Link> | <Link to="/carts">All Carts</Link> | <Link to="/create-cart">Create Cart</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Products />} />
+        <Route path="/payments" element={<Payments />} />
+        <Route path="/cart/:id" element={<Cart />} />
+        <Route path="/carts" element={<Carts />} />
+	    <Route path="/create-cart" element={<CreateCart />} />
+      </Routes>
     </Router>
   );
 }
