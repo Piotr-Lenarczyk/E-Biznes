@@ -32,7 +32,7 @@ Kod: [scala](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/scala)
 
 **Zadanie 3** Kotlin
 
-:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/3c83a16fe6f917934065d05029178e3fcc86a35d)
 
 :x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
 
