@@ -37,7 +37,7 @@ fun Application.module() {
 }
 
 suspend fun sendDiscordMessage(client: HttpClient, message: String) {
-    val webhookUrl = "https://discord.com/api/webhooks/1354435626065461298/E6eIh2ce9Gk2QyeBYP-qkBfKetMGBy96WbnrBfLu4hobduzHXrsVq8eL6qpncJEgOA2g"
+    val webhookUrl = "${WEBHOOK_URL}"
 
     // Remove any surrounding quotes from the message (in case it has extra quotes)
     val cleanMessage = message.trim('"')
