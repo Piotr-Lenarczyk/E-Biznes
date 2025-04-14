@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
                     const cartData = await fetchCart(cartId); // Try fetching the cart if cartId exists
                     setCart(cartData);
                 } else {
-                    const newCart = await createCart(); // If no cartId, create a new cart
+                    const newCart = await createCart([]); // If no cartId, create a new cart
                     localStorage.setItem('cartId', newCart.id); // Store the new cart ID for future reference
                     setCart(newCart);
                 }

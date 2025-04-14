@@ -13,21 +13,28 @@ export async function fetchCarts() {
 }
 
 
-export async function createCart(productIds) {
-  console.log(productIds)
-  const response = await fetch(`${API_URL}/carts`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      products: productIds.map((id) => ({ id })), // Map product IDs into the expected format
-    }),
-  });
+export const createCart = async (productIds = []) => {
+  try {
+    const response = await fetch(`${API_URL}/carts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ productIds }),
+    });
 
-  if (!response.ok) throw new Error("Failed to create cart");
-  return response.json();
-}
+    if (!response.ok) {
+      const errorDetails = await response.text();
+      console.error('Failed to create cart:', response.status, errorDetails);
+      throw new Error('Failed to create cart');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error creating cart:', error);
+    throw error;
+  }
+};
 
 export async function updateCart(cartId, productIds) {
   console.log(productIds)
