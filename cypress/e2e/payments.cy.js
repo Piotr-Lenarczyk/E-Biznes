@@ -1,5 +1,104 @@
 const FRONTEND_URL = 'http://172.23.224.32:3000';
 
+describe('Products Page', () => {
+    beforeEach(() => {
+        cy.visit(`${FRONTEND_URL}/`);
+    });
+
+    it('should display the Products header', () => {
+        cy.get('h2').contains('Products').should('be.visible');
+        cy.get('h2').should('have.text', 'Products');
+    });
+
+    it('should list all products', () => {
+        cy.get('ul > li').should('have.length.greaterThan', 0);
+        cy.get('ul').should('be.visible');
+    });
+
+    it('should display product names', () => {
+        cy.get('ul > li').each(($el) => {
+            cy.wrap($el).should('not.be.empty');
+            cy.wrap($el).should('be.visible');
+        });
+    });
+});
+
+describe('Create Cart Page', () => {
+    beforeEach(() => {
+        cy.visit(`${FRONTEND_URL}/create-cart`);
+    });
+
+    it('should display the Create Cart header', () => {
+        cy.get('h2').contains('Create Cart').should('be.visible');
+        cy.get('h2').should('have.text', 'Create Cart');
+    });
+
+    it('should display a loading message if products are not loaded', () => {
+        cy.get('p').contains('Loading products...').should('be.visible');
+        cy.get('p').should('have.text', 'Loading products...');
+    });
+
+    it('should list all available products with checkboxes', () => {
+        cy.get('input[type="checkbox"]').should('have.length.greaterThan', 0);
+        cy.get('input[type="checkbox"]').should('be.visible');
+    });
+
+    it('should allow selecting products', () => {
+        cy.get('input[type="checkbox"]').first().check().should('be.checked');
+        cy.get('input[type="checkbox"]').first().should('be.visible');
+    });
+
+    it('should allow deselecting products', () => {
+        cy.get('input[type="checkbox"]').first().check().uncheck().should('not.be.checked');
+        cy.get('input[type="checkbox"]').first().should('be.visible');
+    });
+
+    it('should submit the form and create a cart', () => {
+        cy.get('input[type="checkbox"]').first().check();
+        cy.get('button[type="submit"]').click();
+        cy.url().should('include', '/cart/');
+        cy.get('button[type="submit"]').should('be.visible');
+    });
+});
+
+describe('Cart Page', () => {
+    beforeEach(() => {
+        cy.visit(`${FRONTEND_URL}/cart/2`);
+    });
+
+    it('should display the Cart header with ID', () => {
+        cy.get('h2').contains('Cart #2').should('be.visible');
+        cy.get('h2').should('have.text', 'Cart #2');
+    });
+
+    it('should list products in the cart', () => {
+        cy.get('ul > li').should('have.length.greaterThan', 0);
+        cy.get('ul').should('be.visible');
+    });
+
+    it('should display all available products with checkboxes', () => {
+        cy.get('input[type="checkbox"]').should('have.length.greaterThan', 0);
+        cy.get('input[type="checkbox"]').should('be.visible');
+    });
+
+    it('should allow selecting additional products', () => {
+        cy.get('input[type="checkbox"]').first().check().should('be.checked');
+        cy.get('input[type="checkbox"]').first().should('be.visible');
+    });
+
+    it('should allow deselecting products', () => {
+        cy.get('input[type="checkbox"]').first().check().uncheck().should('not.be.checked');
+        cy.get('input[type="checkbox"]').first().should('be.visible');
+    });
+
+    it('should update the cart when clicking the update button', () => {
+        cy.get('input[type="checkbox"]').first().check();
+        cy.get('button').contains('Update Cart').click();
+        cy.get('ul > li').should('have.length.greaterThan', 0);
+        cy.get('button').contains('Update Cart').should('be.visible');
+    });
+});
+
 describe('Payments Page', () => {
     beforeEach(() => {
         cy.visit(`${FRONTEND_URL}/payments`);
@@ -7,18 +106,20 @@ describe('Payments Page', () => {
 
     it('should display the Payments header', () => {
         cy.get('h2').contains('Payments').should('be.visible');
+        cy.get('h2').should('have.text', 'Payments');
     });
 
     it('should have all input fields visible', () => {
         cy.get('input[name="amount"]').should('be.visible');
         cy.get('input[name="cardNumber"]').should('be.visible');
         cy.get('input[name="expirationDate"]').should('be.visible');
+        cy.get('form').should('be.visible');
     });
 
     it('should allow entering payment details', () => {
-        cy.get('input[name="amount"]').type('100');
-        cy.get('input[name="cardNumber"]').type('1234567812345678');
-        cy.get('input[name="expirationDate"]').type('12/25');
+        cy.get('input[name="amount"]').type('100').should('have.value', '100');
+        cy.get('input[name="cardNumber"]').type('1234567812345678').should('have.value', '1234567812345678');
+        cy.get('input[name="expirationDate"]').type('12/25').should('have.value', '12/25');
     });
 
     it('should submit the form and display a success message on valid input', () => {
@@ -34,6 +135,7 @@ describe('Payments Page', () => {
 
         cy.wait('@postPayment');
         cy.contains('Payment Successful!').should('be.visible');
+        cy.get('button[type="submit"]').should('be.visible');
     });
 
     it('should display an error message on failed payment', () => {
@@ -49,10 +151,12 @@ describe('Payments Page', () => {
 
         cy.wait('@postPayment');
         cy.contains('Payment Failed!').should('be.visible');
+        cy.get('button[type="submit"]').should('be.visible');
     });
 
     it('should not submit the form if required fields are empty', () => {
         cy.get('button[type="submit"]').click();
         cy.contains('Payment form submitted').should('not.exist');
+        cy.get('form').should('be.visible');
     });
 });
