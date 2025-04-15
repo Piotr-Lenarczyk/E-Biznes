@@ -6,7 +6,7 @@ import (
     "log"
     "github.com/labstack/echo/v4"
     "github.com/labstack/echo/v4/middleware"
-    "go-echo-gorm-app/controllers" // import controllers
+    "go-echo-gorm-app/controllers"
 )
 
 var db *gorm.DB
