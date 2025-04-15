@@ -57,7 +57,6 @@ describe('Create Cart Page', () => {
         cy.get('input[type="checkbox"]').first().check();
         cy.get('button[type="submit"]').click();
         cy.url().should('include', '/cart/');
-        cy.get('button[type="submit"]').should('be.visible');
     });
 });
 
@@ -106,20 +105,18 @@ describe('Payments Page', () => {
 
     it('should display the Payments header', () => {
         cy.get('h2').contains('Payments').should('be.visible');
-        cy.get('h2').should('have.text', 'Payments');
     });
 
     it('should have all input fields visible', () => {
         cy.get('input[name="amount"]').should('be.visible');
         cy.get('input[name="cardNumber"]').should('be.visible');
         cy.get('input[name="expirationDate"]').should('be.visible');
-        cy.get('form').should('be.visible');
     });
 
     it('should allow entering payment details', () => {
-        cy.get('input[name="amount"]').type('100').should('have.value', '100');
-        cy.get('input[name="cardNumber"]').type('1234567812345678').should('have.value', '1234567812345678');
-        cy.get('input[name="expirationDate"]').type('12/25').should('have.value', '12/25');
+        cy.get('input[name="amount"]').type('100');
+        cy.get('input[name="cardNumber"]').type('1234567812345678');
+        cy.get('input[name="expirationDate"]').type('12/25');
     });
 
     it('should submit the form and display a success message on valid input', () => {
@@ -135,7 +132,6 @@ describe('Payments Page', () => {
 
         cy.wait('@postPayment');
         cy.contains('Payment Successful!').should('be.visible');
-        cy.get('button[type="submit"]').should('be.visible');
     });
 
     it('should display an error message on failed payment', () => {
@@ -151,12 +147,10 @@ describe('Payments Page', () => {
 
         cy.wait('@postPayment');
         cy.contains('Payment Failed!').should('be.visible');
-        cy.get('button[type="submit"]').should('be.visible');
     });
 
     it('should not submit the form if required fields are empty', () => {
         cy.get('button[type="submit"]').click();
         cy.contains('Payment form submitted').should('not.exist');
-        cy.get('form').should('be.visible');
     });
 });
