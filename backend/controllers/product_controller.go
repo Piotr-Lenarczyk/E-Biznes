@@ -7,6 +7,8 @@ import (
 	"gorm.io/gorm"
 )
 
+const productIDPath = "/products/:id"
+
 type Product struct {
 	ID         uint       `json:"id"`
 	Name       string     `json:"name"`
@@ -23,9 +25,9 @@ func RegisterProductRoutes(e *echo.Echo, db *gorm.DB) {
 
 	e.GET("/products", pc.GetProducts)
 	e.POST("/products", pc.CreateProduct)
-	e.GET("/products/:id", pc.GetProductByID)
-	e.PUT("/products/:id", pc.UpdateProduct)
-	e.DELETE("/products/:id", pc.DeleteProduct)
+	e.GET(productIDPath, pc.GetProductByID)
+	e.PUT(productIDPath, pc.UpdateProduct)
+	e.DELETE(productIDPath, pc.DeleteProduct)
 }
 
 func (pc *ProductController) GetProducts(ctx echo.Context) error {

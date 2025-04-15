@@ -6,6 +6,8 @@ import (
     "gorm.io/gorm"
 )
 
+const categoryIDPath = "/categories/:id"
+
 // Category model
 type Category struct {
     ID   uint   `json:"id"`
@@ -21,9 +23,9 @@ func RegisterCategoryRoutes(e *echo.Echo, db *gorm.DB) {
 
     e.GET("/categories", categoryController.GetCategories)
     e.POST("/categories", categoryController.CreateCategory)
-    e.GET("/categories/:id", categoryController.GetCategoryByID)
-    e.PUT("/categories/:id", categoryController.UpdateCategory)
-    e.DELETE("/categories/:id", categoryController.DeleteCategory)
+    e.GET(categoryIDPath, categoryController.GetCategoryByID)
+    e.PUT(categoryIDPath, categoryController.UpdateCategory)
+    e.DELETE(categoryIDPath, categoryController.DeleteCategory)
 }
 
 func (cc *CategoryController) GetCategories(ctx echo.Context) error {

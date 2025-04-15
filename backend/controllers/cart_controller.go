@@ -6,6 +6,8 @@ import (
 	"gorm.io/gorm"
 )
 
+const cartIDPath = "/carts/:id"
+
 type Cart struct {
 	ID       uint      `json:"id"`
 	Products []Product `gorm:"many2many:cart_products;" json:"products"`
@@ -20,9 +22,9 @@ func RegisterCartRoutes(e *echo.Echo, db *gorm.DB) {
 
 	e.GET("/carts", cartController.GetCarts)
 	e.POST("/carts", cartController.CreateCart)
-	e.GET("/carts/:id", cartController.GetCartByID)
-	e.PUT("/carts/:id", cartController.UpdateCart)
-	e.DELETE("/carts/:id", cartController.DeleteCart)
+	e.GET(cartIDPath, cartController.GetCartByID)
+	e.PUT(cartIDPath, cartController.UpdateCart)
+	e.DELETE(cartIDPath, cartController.DeleteCart)
 }
 
 // ProductIDs returns a slice of Product IDs from the Cart struct.

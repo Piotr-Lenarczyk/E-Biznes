@@ -1,8 +1,6 @@
 FROM golang:1.23
 
-RUN apt update
-
-RUN apt install -y curl
+RUN apt update && apt install -y curl && apt clean
 
 WORKDIR /app
 
@@ -11,9 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN chmod +x *.sh
-
-RUN go build -o main .
+RUN chmod +x ./*.sh&& go build -o main .
 
 EXPOSE 8080
 
