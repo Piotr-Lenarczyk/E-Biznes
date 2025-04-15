@@ -21,7 +21,9 @@ func init() {
     }
 
     // Migrate the schema
-    db.AutoMigrate(&controllers.Product{}, &controllers.Cart{}, &controllers.Category{}, &controllers.Payment{})
+    if err := db.AutoMigrate(&controllers.Product{}, &controllers.Cart{}, &controllers.Category{}, &controllers.Payment{}); err != nil {
+        log.Fatalf("Failed to migrate database: %v", err)
+    }
 
     // Set DB in the controller
     SetDB(db)

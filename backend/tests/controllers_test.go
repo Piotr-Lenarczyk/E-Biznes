@@ -15,9 +15,11 @@ import (
 )
 
 func setupTestDB() *gorm.DB {
-	db, _ := gorm.Open(sqlite.Open(":memory:"), &gorm.Config{})
-	db.AutoMigrate(&controllers.Product{}, &controllers.Category{}, &controllers.Cart{}, &controllers.Payment{})
-	return db
+    db, _ := gorm.Open(sqlite.Open(":memory:"), &gorm.Config{})
+    if err := db.AutoMigrate(&controllers.Product{}, &controllers.Category{}, &controllers.Cart{}, &controllers.Payment{}); err != nil {
+        panic("Failed to migrate database: " + err.Error())
+    }
+    return db
 }
 
 func TestProductController(t *testing.T) {
