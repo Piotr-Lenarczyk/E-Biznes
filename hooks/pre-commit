@@ -42,14 +42,24 @@ EOF
         exit 1
 fi
 
-# Run linter only on branch 'sonar'
+# Check branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Run linter only on the 'sonar' branch
 if [ "$current_branch" = "sonar" ]; then
     echo "Running linter on branch 'sonar'..."
+
+    # Go to the backend directory
+    cd backend || exit 1
+
+    # Run the linter
     if ! golangci-lint run; then
         echo "Linter errors detected. Commit aborted."
         exit 1
     fi
+
+    # Go back to the root directory
+    cd - > /dev/null
 else
     echo "Skipping linter (not on branch 'sonar')."
 fi
