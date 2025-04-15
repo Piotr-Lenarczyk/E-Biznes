@@ -9,6 +9,7 @@ import (
     "go-echo-gorm-app/controllers"
 )
 
+
 var db *gorm.DB
 var err error
 
