@@ -1,7 +1,7 @@
 {
     "auth": {
-        "username": "piotrlenarczyk_pBaCrx",
-        "access_key": "2dwcs6CpmTqG58wZG9re"
+        "username": "${BROWSERSTACK_USER}",
+        "access_key": "${BROWSERSTACK_KEY}"
     },
     "browsers": [
         {
