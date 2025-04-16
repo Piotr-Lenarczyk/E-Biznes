@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext, useMemo } from 'react';
+import React, { createContext, useState, useEffect, useContext, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { fetchCart, createCart, updateCart } from '../api/cart';
 
@@ -32,15 +32,15 @@ export const CartProvider = ({ children }) => {
         loadCart();
     }, []);
 
-    const addProductToCart = (productId) => {
+    const addProductToCart = useCallback((productId) => {
         if (cart) {
             const updatedCart = { ...cart, products: [...cart.products, { id: productId }] };
             setCart(updatedCart);
             updateCart(cart.id, updatedCart.products.map(p => p.id));
         }
-    };
+    }, [cart]);
 
-    const removeProductFromCart = (productId) => {
+    const removeProductFromCart = useCallback((productId) => {
         if (cart) {
             const updatedCart = {
                 ...cart,
@@ -49,13 +49,13 @@ export const CartProvider = ({ children }) => {
             setCart(updatedCart);
             updateCart(cart.id, updatedCart.products.map(p => p.id));
         }
-    };
+    }, [cart]);
 
     const value = useMemo(() => ({
         cart,
         addProductToCart,
         removeProductFromCart,
-    }), [cart]);
+    }), [cart, addProductToCart, removeProductFromCart]);
 
     return (
         <CartContext.Provider value={value}>

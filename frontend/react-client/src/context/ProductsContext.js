@@ -1,69 +1,37 @@
 import React, { createContext, useState, useEffect, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { fetchCart, createCart, updateCart } from '../api/cart';
+import { fetchProducts } from '../api/product';
 
-const CartContext = createContext();
+const ProductsContext = createContext();
 
-export const useCart = () => useContext(CartContext);
+export const useProducts = () => useContext(ProductsContext);
 
-export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState(null);
+export const ProductsProvider = ({ children }) => {
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const loadCart = async () => {
+        async function loadProducts() {
             try {
-                const cartId = localStorage.getItem('cartId');
-                if (cartId) {
-                    const cartData = await fetchCart(cartId);
-                    setCart(cartData);
-                } else {
-                    const newCart = await createCart([]);
-                    localStorage.setItem('cartId', newCart.id);
-                    setCart(newCart);
-                }
+                const productsData = await fetchProducts();
+                setProducts(productsData);
             } catch (error) {
-                console.error("Error loading cart:", error);
-                const newCart = await createCart();
-                localStorage.setItem('cartId', newCart.id);
-                setCart(newCart);
+                console.error("Error fetching products:", error);
             }
-        };
-
-        loadCart();
+        }
+        loadProducts();
     }, []);
 
-    const addProductToCart = (productId) => {
-        if (cart) {
-            const updatedCart = { ...cart, products: [...cart.products, { id: productId }] };
-            setCart(updatedCart);
-            updateCart(cart.id, updatedCart.products.map(p => p.id));
-        }
-    };
-
-    const removeProductFromCart = (productId) => {
-        if (cart) {
-            const updatedCart = {
-                ...cart,
-                products: cart.products.filter((product) => product.id !== productId),
-            };
-            setCart(updatedCart);
-            updateCart(cart.id, updatedCart.products.map(p => p.id));
-        }
-    };
-
     const value = useMemo(() => ({
-        cart,
-        addProductToCart,
-        removeProductFromCart,
-    }), [cart]);
+        products,
+    }), [products]);
 
     return (
-        <CartContext.Provider value={value}>
+        <ProductsContext.Provider value={value}>
             {children}
-        </CartContext.Provider>
+        </ProductsContext.Provider>
     );
 };
 
-CartProvider.propTypes = {
+ProductsProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
