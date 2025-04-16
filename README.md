@@ -1,5 +1,15 @@
 # E-Biznes
 
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=alert_status)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=coverage)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=bugs)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=code_smells)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Duplications](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=security_rating)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Piotr-Lenarczyk_E-Biznes&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Piotr-Lenarczyk_E-Biznes)
+
 **Zadanie 1** Docker
 
 :white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
