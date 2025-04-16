@@ -13,4 +13,10 @@ RUN chmod +x ./*.sh && go build -o main .
 
 EXPOSE 8080
 
+RUN useradd -m -u 1001 appuser
+
+RUN chown -R appuser:appuser /app
+
+USER appuser
+
 CMD ["./main"]
