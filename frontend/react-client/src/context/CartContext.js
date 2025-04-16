@@ -1,5 +1,6 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import { fetchCart, createCart, updateCart } from '../api/cart'; // Assuming `createCart` is in `api/cart.js`
+import React, { createContext, useState, useEffect, useContext, useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { fetchCart, createCart, updateCart } from '../api/cart';
 
 const CartContext = createContext();
 
@@ -11,20 +12,19 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         const loadCart = async () => {
             try {
-                // Try to fetch the cart based on dynamic ID (you can modify this logic to get cart ID from URL, localStorage, etc.)
-                const cartId = localStorage.getItem('cartId'); // Example of using localStorage to get cart ID
+                const cartId = localStorage.getItem('cartId');
                 if (cartId) {
-                    const cartData = await fetchCart(cartId); // Try fetching the cart if cartId exists
+                    const cartData = await fetchCart(cartId);
                     setCart(cartData);
                 } else {
-                    const newCart = await createCart([]); // If no cartId, create a new cart
-                    localStorage.setItem('cartId', newCart.id); // Store the new cart ID for future reference
+                    const newCart = await createCart([]);
+                    localStorage.setItem('cartId', newCart.id);
                     setCart(newCart);
                 }
             } catch (error) {
-                // If the cart doesn't exist (or any error occurs), create a new cart
+                console.error("Error loading cart:", error);
                 const newCart = await createCart();
-                localStorage.setItem('cartId', newCart.id); // Store the new cart ID
+                localStorage.setItem('cartId', newCart.id);
                 setCart(newCart);
             }
         };
@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
         if (cart) {
             const updatedCart = { ...cart, products: [...cart.products, { id: productId }] };
             setCart(updatedCart);
-            updateCart(cart.id, updatedCart.products.map(p => p.id)); // Update the backend with the new cart
+            updateCart(cart.id, updatedCart.products.map(p => p.id));
         }
     };
 
@@ -47,13 +47,23 @@ export const CartProvider = ({ children }) => {
                 products: cart.products.filter((product) => product.id !== productId),
             };
             setCart(updatedCart);
-            updateCart(cart.id, updatedCart.products.map(p => p.id)); // Update the backend with the updated cart
+            updateCart(cart.id, updatedCart.products.map(p => p.id));
         }
     };
 
+    const value = useMemo(() => ({
+        cart,
+        addProductToCart,
+        removeProductFromCart,
+    }), [cart]);
+
     return (
-        <CartContext.Provider value={{ cart, addProductToCart, removeProductFromCart }}>
+        <CartContext.Provider value={value}>
             {children}
         </CartContext.Provider>
     );
+};
+
+CartProvider.propTypes = {
+    children: PropTypes.node.isRequired,
 };

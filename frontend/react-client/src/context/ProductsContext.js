@@ -1,28 +1,69 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import { fetchProducts } from '../api/product';  // Assuming your product API is in `api/product.js`
+import React, { createContext, useState, useEffect, useContext, useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { fetchCart, createCart, updateCart } from '../api/cart';
 
-const ProductsContext = createContext();
+const CartContext = createContext();
 
-export const useProducts = () => useContext(ProductsContext);
+export const useCart = () => useContext(CartContext);
 
-export const ProductsProvider = ({ children }) => {
-    const [products, setProducts] = useState([]);
+export const CartProvider = ({ children }) => {
+    const [cart, setCart] = useState(null);
 
     useEffect(() => {
-        async function loadProducts() {
+        const loadCart = async () => {
             try {
-                const productsData = await fetchProducts();
-                setProducts(productsData);
+                const cartId = localStorage.getItem('cartId');
+                if (cartId) {
+                    const cartData = await fetchCart(cartId);
+                    setCart(cartData);
+                } else {
+                    const newCart = await createCart([]);
+                    localStorage.setItem('cartId', newCart.id);
+                    setCart(newCart);
+                }
             } catch (error) {
-                console.error("Error fetching products:", error);
+                console.error("Error loading cart:", error);
+                const newCart = await createCart();
+                localStorage.setItem('cartId', newCart.id);
+                setCart(newCart);
             }
-        }
-        loadProducts();
+        };
+
+        loadCart();
     }, []);
 
+    const addProductToCart = (productId) => {
+        if (cart) {
+            const updatedCart = { ...cart, products: [...cart.products, { id: productId }] };
+            setCart(updatedCart);
+            updateCart(cart.id, updatedCart.products.map(p => p.id));
+        }
+    };
+
+    const removeProductFromCart = (productId) => {
+        if (cart) {
+            const updatedCart = {
+                ...cart,
+                products: cart.products.filter((product) => product.id !== productId),
+            };
+            setCart(updatedCart);
+            updateCart(cart.id, updatedCart.products.map(p => p.id));
+        }
+    };
+
+    const value = useMemo(() => ({
+        cart,
+        addProductToCart,
+        removeProductFromCart,
+    }), [cart]);
+
     return (
-        <ProductsContext.Provider value={{ products }}>
+        <CartContext.Provider value={value}>
             {children}
-        </ProductsContext.Provider>
+        </CartContext.Provider>
     );
+};
+
+CartProvider.propTypes = {
+    children: PropTypes.node.isRequired,
 };
