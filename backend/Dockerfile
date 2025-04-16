@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN chmod +x ./*.sh&& go build -o main .
+RUN chmod +x ./*.sh && go build -o main .
 
 EXPOSE 8080
 
