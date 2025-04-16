@@ -2,17 +2,19 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-RUN apk update && apk add curl && apk cache clean
+RUN apk update && apk add curl && apk cache clean && adduser -D -u 1001 appuser
 
-COPY package.json package-lock.json ./
-RUN npm install --ignore-scripts
+COPY --chown=appuser:appuser package*.json ./
 
-COPY . .
-
-EXPOSE 3000
-
-RUN adduser -D -u 1001 appuser && chown -R appuser:appuser /app
+RUN chown -R appuser:appuser /app
 
 USER appuser
 
+RUN npm install --ignore-scripts
+
+COPY --chown=appuser:appuser . .
+
+EXPOSE 3000
+
 CMD ["npm", "start"]
+
