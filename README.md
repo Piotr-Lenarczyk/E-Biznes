@@ -47,13 +47,13 @@ Kod: [kotlin](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/kotlin)
 
 **Zadanie 4** Go
 
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/570bed7a2f56b48ffa1ca76fa73090ee4b783418)
 
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/94a4b6998c4881c28b4cc3999fc60a1fb29d83ee)
 
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/e0243c732956a836f6abf77dedcd16bd3316b5d9)
 
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/427c5194e54ca12c0c7ad7b5316b83826e83ce84)
 
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
@@ -62,13 +62,13 @@ Kod: [go](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/go)
 
 **Zadanie 5** Frontend
 
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/8deddc566809852ff79a56be9c57f25e0579cd80)
 
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/f8d273324e281fa7a9026c09c038fa09b0ca7023)
 
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/82b37f36374e18f3105b7b0f998b4a22163fc15e)
 
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/82b37f36374e18f3105b7b0f998b4a22163fc15e)
 
 :x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
 
@@ -78,15 +78,15 @@ Kod: [frontend](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/frontend)
 
 **Zadanie 6** Testy
 
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/ee944be01807e6d2570ffae855435a2a3e166834)
 
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/74bb8172be02d803811f19d856abc09a5b108cf0)
 
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/ab192279775968226657da4a5ba1575e0294a19e)
 
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/189d399d9cbb1bd1783f0e9edcf20afec64cd9eb)
 
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
+:white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/c033eb4afba972c66da1a88933d82407a4feef3e)
 
 
 Kod: [tests](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/tests)
@@ -94,15 +94,15 @@ Kod: [tests](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/tests)
 
 **Zadanie 7** Sonar
 
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/kprzystalski/workshop_template/commit/hash)
+:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/7c59c116a619cba32bc2f7c3ff0bb8cb4f609084)
 
-:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/kprzystalski/workshop_template/commit/hash)
+:x: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/e93054c3a988c9cec24267300b41e6cef8cbc407)
 
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/kprzystalski/workshop_template/commit/hash)
+:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/8c2906d3aec07ab7e7b34e207231ebb7680dd700)
 
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/kprzystalski/workshop_template/commit/hash)
+:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/f30f185794c95af0b6627d1bb02c54c40fec227b)
 
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/kprzystalski/workshop_template/commit/hash)
+:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/6821c7d8753c2d2791bf4fc20ae78c44a7585c87)
 
 
 Kod: [sonar](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/sonar)
