@@ -94,15 +94,15 @@ Kod: [tests](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/tests)
 
 **Zadanie 7** Sonar
 
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/7c59c116a619cba32bc2f7c3ff0bb8cb4f609084)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/7c59c116a619cba32bc2f7c3ff0bb8cb4f609084)
 
-:x: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/e93054c3a988c9cec24267300b41e6cef8cbc407)
+:white_check_mark: 3.5 wymaganie 2 [Link do commita 2](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/e93054c3a988c9cec24267300b41e6cef8cbc407)
 
-:x: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/8c2906d3aec07ab7e7b34e207231ebb7680dd700)
+:white_check_mark: 4.0 wymaganie 3 [Link do commita 3](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/8c2906d3aec07ab7e7b34e207231ebb7680dd700)
 
-:x: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/f30f185794c95af0b6627d1bb02c54c40fec227b)
+:white_check_mark: 4.5 wymaganie 4 [Link do commita 4](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/f30f185794c95af0b6627d1bb02c54c40fec227b)
 
-:x: 5.0 wymaganie 5 [Link do commita 5](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/6821c7d8753c2d2791bf4fc20ae78c44a7585c87)
+:white_check_mark: 5.0 wymaganie 5 [Link do commita 5](https://github.com/Piotr-Lenarczyk/E-Biznes/commit/6821c7d8753c2d2791bf4fc20ae78c44a7585c87)
 
 
 Kod: [sonar](https://github.com/Piotr-Lenarczyk/E-Biznes/tree/sonar)
